@@ -1,53 +1,46 @@
-# Quản lý sách
-Môn học: Lập Trình Web PTIT
+# Book Library — giao diện admin
 
-Yêu cầu dự án: Tạo Web quản lý sách (Người bán, người mua, các thao tác quản lý sách, mua sách, thanh toán, ...)
+Chỉ HTML, CSS và JavaScript thuần. Không có backend, API, Java, Maven, MySQL hoặc bước build.
 
-Chi tiết: [Link YouTube](https://youtu.be/XwT-syuvcQU?si=BLijGWfBIddWHMIJ)
+## Cách mở
 
-(Dưới đây nêu một vài điểm đáng chú ý)
-# Công nghệ
-SpringBoot
+Mở thư mục trong VS Code, nhấp phải `index.html` → **Open with Live Server**. Trang tổng quan admin mở trực tiếp, không cần đăng nhập. Live Server chỉ phục vụ file frontend tĩnh.
 
-Thymleaf
+Có thể đưa nguyên thư mục lên hosting tĩnh. Nên dùng Live Server hoặc hosting tĩnh để các trang dùng chung localStorage, thay vì mở từng file bằng `file://`.
 
-Jpa + mySQL
+## Cấu trúc
 
-Lombok
+```text
+index.html                Tổng quan admin
+pages/admin/books.html    Danh sách sách
+pages/admin/book.html     Thêm / sửa sách
+pages/admin/categories.html  Danh mục
+pages/admin/authors.html   Tác giả
+pages/admin/users.html     Danh sách khách hàng
+pages/admin/user.html      Sửa thông tin khách hàng
+pages/admin/orders.html    Danh sách đơn hàng
+pages/admin/order.html     Chi tiết / duyệt / hủy đơn
+css/style.css             Giao diện dùng chung
+js/data.js                Dữ liệu mẫu
+js/store.js               Các thao tác dữ liệu trong trình duyệt
+js/common.js              Menu, footer, hàm hiển thị
+js/admin.js               Các màn hình admin
+images/books/             Ảnh bìa sách
+tests/                    Kiểm tra JavaScript
+```
 
-Spring Security
+Đã bỏ toàn bộ trang cửa hàng, giỏ hàng, đặt hàng của người mua, đăng nhập/đăng ký và hồ sơ cá nhân.
 
-Common Validator
+## Dữ liệu mẫu
 
-# Cách UpLoad Ảnh
+Sách, khách hàng và đơn hàng lưu trong localStorage, chỉ tồn tại trong trình duyệt đang dùng. Đây là giao diện admin mô phỏng cho bài tập frontend.
 
-**Cách lưu ảnh từ view xuống DB**
-Trong entity Book thêm 1 field có kiểu dữ liệu MultipartFile để xử lý ảnh trên view, 1 file có kiểu dữ liệu byte[] lưu ảnh trong DB.
+Lần mở đầu tiên có sẵn khách hàng và đơn hàng mẫu để xem hoặc thử duyệt/hủy đơn. Nếu đã dùng bản trước, danh mục sách, khách hàng và đơn hàng đã lưu được giữ lại; dữ liệu đăng nhập, giỏ hàng và đánh giá được bỏ.
 
-Trên view tạo thẻ input có th:field tương ứng field MultipartFile.
+Ảnh bìa tải lên: JPG, PNG hoặc WebP, tối đa 500 KB. Khi bộ nhớ đầy hoặc bị chặn, trang báo lỗi và giữ nguyên dữ liệu trước thao tác.
 
-Ở server: set field byte[] của book = newBook.getFileData().getBytes(); gọi save của bookRepository
+Để quay lại dữ liệu mẫu ban đầu, xóa khóa `book-library-v1` trong Local Storage của trang rồi tải lại.
 
-**Cách load ảnh lên**
-Trên view, phần ảnh gắn link có request “bookImage”, tham số id = id của book.
+## Kiểm tra (tùy chọn)
 
-Bên controller xử lý bằng method productImage.
-
-# Cách lưu Cart (Giỏ hàng)
-Sử dụng Session (getCartInSession): Lưu trữ Cart tạm thời, Nếu Sign out thì Cart được Reset
-
-**Logic xử lý**
-
-CartInfo: Kiểm tra xem sách tồn tại trong giỏ hay chưa (Nếu chưa phải set số lượng ban đầu là 0).
-
-Sau đó số lượng = số lượng ban đầu của sách đó trong giỏ + số lượng sách mới thêm.
-
-Nếu số lượng <= 0 thì loại bỏ khỏi giỏ, ngược lại thêm mới số lượng đó.
-
-Khi đặt hàng xong: thực hiện xóa cartInfo trong session (method removeCartInSession của classUtils).
-
-# Đánh giá của khách hàng 
-Lấy id_book, username ; Set các giá trị book, user, và thời gian comment của user đó rồi save trong repository.
-
-**Lưu star**: Tạo 1 input trên html, khi ấn Star -> xác định vị trí của ngôi sao và lưu ở input đó (lấy số Star)
-
+Nếu có Node.js, chạy `node --test`. Không cần cài npm hoặc thư viện để chạy frontend.

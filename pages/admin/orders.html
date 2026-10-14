@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý đơn hàng | Book Library</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/data.js" defer></script>
+  <script src="../../js/store.js" defer></script>
+  <script src="../../js/common.js" defer></script>
+  <script src="../../js/admin.js" defer></script>
+</head>
+<body data-page="admin-orders">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header id="header" class="site-header"></header>
+  <main id="main" class="container">
+    <p id="notice" role="alert" hidden></p>
+    <div id="content">
+      <h1>Quản lý đơn hàng</h1>
+      <div class="toolbar"><label>Tìm đơn hàng<input id="admin-search" type="search" placeholder="Mã đơn hoặc người nhận"></label>
+        <label>Trạng thái<select id="order-status"><option value="">Tất cả</option><option>Đang chờ duyệt</option><option>Đang giao</option><option>Đã giao</option><option>Đã hủy</option></select></label>
+      </div><div id="admin-list"></div>
+    </div>
+    <noscript>Vui lòng bật JavaScript để sử dụng dữ liệu mẫu và các thao tác trên trang.</noscript>
+  </main>
+  <footer id="footer" class="site-footer"></footer>
+</body>
+</html>
