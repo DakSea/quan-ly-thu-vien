@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tổng quan | Quản lý thư viện</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/data.js" defer></script>
+  <script src="../../js/store.js" defer></script>
+  <script src="../../js/common.js" defer></script>
+  <script src="../../js/admin.js" defer></script>
+</head>
+<body data-area="admin" data-require="admin" data-page="dashboard">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header id="header" class="site-header"></header>
+  <main id="main" class="container">
+    <p id="notice" role="alert" hidden></p>
+    <div id="content">
+      <p class="eyebrow">Hệ thống quản trị</p>
+      <h1>Tổng quan thư viện</h1>
+      <p class="muted">Theo dõi sách, người dùng và tình hình mượn – trả trong thư viện.</p>
+      <div id="stats" class="stats"></div>
+      <div class="actions">
+        <a class="button" href="../../pages/admin/book.html">Thêm sách</a>
+        <a class="button secondary" href="../../pages/admin/loans.html">Quản lý mượn – trả</a>
+        <a class="button secondary" href="../../pages/admin/reports.html">Xem báo cáo</a>
+        <a class="button secondary" href="../../pages/reader/books.html">Mở trang người dùng</a>
+      </div>
+      <section class="section-heading"><h2>Thống kê lượt mượn theo sách</h2></section>
+      <div id="top-books"></div>
+    </div>
+    <noscript>Vui lòng bật JavaScript để sử dụng hệ thống quản lý thư viện.</noscript>
+  </main>
+  <footer id="footer" class="site-footer"></footer>
+</body>
+</html>

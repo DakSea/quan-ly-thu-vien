@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thông tin sách | Quản lý thư viện</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/data.js" defer></script>
+  <script src="../../js/store.js" defer></script>
+  <script src="../../js/common.js" defer></script>
+  <script src="../../js/admin.js" defer></script>
+</head>
+<body data-area="admin" data-require="admin" data-page="admin-book">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header id="header" class="site-header"></header>
+  <main id="main" class="container">
+    <p id="notice" role="alert" hidden></p>
+    <div id="content">
+      <a href="books.html">← Quản lý sách</a>
+      <div class="section-heading"><h1 id="editor-title">Thông tin sách</h1></div>
+      <form id="book-form" class="form form-section">
+        <label>Tên sách<input type="text" name="title" maxlength="200" required></label>
+        <div class="form-row">
+          <label>Tác giả<select name="authorId" required></select></label>
+          <label>Danh mục<select name="categoryId" required></select></label>
+        </div>
+        <div class="form-row">
+          <label>Mã ISBN (nếu có)<input type="text" name="isbn" maxlength="30"></label>
+          <label>Năm/ngày xuất bản<input type="date" name="published"></label>
+        </div>
+        <div class="form-row">
+          <label>Số trang<input type="number" name="pages" min="1" step="1" value="1" required></label>
+          <label>Số bản còn trong thư viện<input type="number" name="stock" min="0" step="1" value="0" required></label>
+        </div>
+        <label>Mô tả<textarea name="description" maxlength="5000"></textarea></label>
+        <label>Ảnh bìa<input type="file" name="imageFile" accept="image/jpeg,image/png,image/webp"></label>
+        <p class="hint">Ảnh JPG, PNG hoặc WebP, tối đa 500 KB. Để trống để giữ ảnh hiện có.</p>
+        <img id="image-preview" class="preview" alt="Xem trước ảnh bìa" hidden>
+        <div class="actions"><button type="submit">Lưu sách</button><a href="books.html">Quay lại</a></div>
+        <p class="form-message" role="status" hidden></p>
+      </form>
+    </div>
+    <noscript>Vui lòng bật JavaScript để sử dụng hệ thống quản lý thư viện.</noscript>
+  </main>
+  <footer id="footer" class="site-footer"></footer>
+</body>
+</html>

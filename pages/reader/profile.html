@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hồ sơ người dùng | Thư viện</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/data.js" defer></script>
+  <script src="../../js/store.js" defer></script>
+  <script src="../../js/common.js" defer></script>
+  <script src="../../js/reader.js" defer></script>
+</head>
+<body data-area="reader" data-require="user" data-page="reader-profile">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header id="header" class="site-header"></header>
+  <main id="main" class="container">
+    <p id="notice" role="alert" hidden></p>
+    <div id="account-context" class="reader-context"></div><p class="eyebrow">Không gian người dùng</p><h1>Hồ sơ người dùng</h1><p class="muted">Kiểm tra và cập nhật thông tin liên hệ của bạn.</p><div id="profile-empty" class="empty"><p>Đăng nhập để xem và cập nhật hồ sơ của bạn.</p></div>
+<form id="profile-form" class="form form-section editor" hidden><p>Mã người dùng: <strong id="reader-code"></strong></p>
+<label>Họ tên<input name="name" required maxlength="100" autocomplete="name"></label>
+<label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+<div class="form-row"><label>Số điện thoại<input name="phone" type="tel" maxlength="20" autocomplete="tel"></label><label>Địa chỉ<input name="address" maxlength="250" autocomplete="street-address"></label></div>
+<div class="actions"><button type="submit">Lưu thông tin</button><a class="button secondary" href="loans.html">Xem lịch sử mượn</a></div><p class="form-message" role="status" hidden></p></form>
+    <noscript>Vui lòng bật JavaScript để tra cứu và mượn sách.</noscript>
+  </main>
+  <footer id="footer" class="site-footer"></footer>
+</body>
+</html>
+

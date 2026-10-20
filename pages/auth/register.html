@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng ký tài khoản | Thư viện</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/data.js" defer></script>
+  <script src="../../js/store.js" defer></script>
+  <script src="../../js/common.js" defer></script>
+  <script src="../../js/auth.js" defer></script>
+</head>
+<body data-area="auth" data-page="register">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header id="header" class="site-header"></header>
+  <main id="main" class="container"><section class="auth-layout"><p id="notice" role="alert" hidden></p><p class="eyebrow">Thành viên mới</p><h1>Đăng ký tài khoản</h1><p class="muted">Tạo tài khoản cá nhân để bắt đầu sử dụng thư viện.</p><form id="register-form" class="form editor"><label>Họ và tên<input name="name" required maxlength="100" autocomplete="name"></label><label>Tên đăng nhập<input name="username" required minlength="4" maxlength="30" pattern="[a-zA-Z0-9_]{4,30}" autocomplete="username" aria-describedby="username-hint"></label><p class="hint" id="username-hint">4–30 ký tự, gồm chữ không dấu, số hoặc dấu gạch dưới.</p><label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label><label>Mật khẩu<input name="password" type="password" required minlength="8" autocomplete="new-password"></label><label>Nhập lại mật khẩu<input name="confirmPassword" type="password" required minlength="8" autocomplete="new-password"></label><button type="submit">Đăng ký</button><p class="form-message" role="alert" hidden></p></form><p>Đã có tài khoản? <a id="auth-switch" href="login.html">Đăng nhập</a></p><noscript>Vui lòng bật JavaScript để sử dụng tài khoản.</noscript></section></main>
+  <footer id="footer" class="site-footer"></footer>
+</body>
+</html>

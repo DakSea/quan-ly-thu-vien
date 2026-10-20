@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tra cứu sách | Thư viện</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/data.js" defer></script>
+  <script src="../../js/store.js" defer></script>
+  <script src="../../js/common.js" defer></script>
+  <script src="../../js/reader.js" defer></script>
+</head>
+<body data-area="reader" data-page="reader-books">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header id="header" class="site-header"></header>
+  <main id="main" class="container">
+    <p id="notice" role="alert" hidden></p>
+    <div id="account-context" class="reader-context"></div><p class="eyebrow">Không gian người dùng</p><h1>Tra cứu sách thư viện</h1><p class="muted">Tìm cuốn sách bạn cần và theo dõi việc mượn sách ngay tại đây.</p><div class="actions"><a class="button" href="#catalog-heading">Chọn sách để mượn</a><a class="button secondary" href="loans.html">Trả sách và xem lịch sử</a><a class="button secondary" href="profile.html">Hồ sơ của tôi</a></div><div id="stats" class="stats"></div>
+<form id="search-form" class="toolbar" role="search">
+<label>Tìm sách<input id="book-search" type="search" placeholder="Tên sách, tác giả hoặc ISBN"></label>
+<label>Danh mục<select id="category-filter"></select></label>
+<label>Tình trạng<select id="availability-filter"><option value="">Tất cả sách</option><option value="available">Còn sách</option></select></label>
+<label>Sắp xếp<select id="book-sort"><option value="">Mặc định</option><option value="title">Tên sách A – Z</option><option value="stock">Số bản còn giảm dần</option></select></label>
+<button id="clear-filters" type="button" class="secondary">Xóa bộ lọc</button></form>
+<section aria-labelledby="catalog-heading"><div class="section-heading"><h2 id="catalog-heading">Danh sách sách</h2><p id="result-count" class="muted" role="status"></p></div><div id="book-list" class="book-grid"></div></section>
+    <noscript>Vui lòng bật JavaScript để tra cứu và mượn sách.</noscript>
+  </main>
+  <footer id="footer" class="site-footer"></footer>
+</body>
+</html>
+
